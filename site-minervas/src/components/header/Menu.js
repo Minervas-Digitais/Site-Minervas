@@ -5,8 +5,8 @@ import Button from "@material-ui/core/Button"
 import { makeStyles } from '@material-ui/core/styles';
 
 //import LoginButton from "../authentication/LoginButton"
-import { useLocation, redirect } from 'react-router-dom'
-// import User from "./User"
+//import { useLocation, redirect } from 'react-router-dom'
+//import User from "./User"
 
 import "./Menu.scss"
 
@@ -40,9 +40,9 @@ const useStyles = makeStyles({
 });
 
 function Menu() {
-  const [page, setPage] = useState("")
-  // const { isAuthenticated } = useAuth0()
-  // let location = useLocation();
+  //const [page, setPage] = useState("")
+   //const { isAuthenticated } = useAuth0()
+   //let location = useLocation();
   const classes = useStyles();
 
   return (
