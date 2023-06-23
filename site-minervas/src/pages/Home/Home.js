@@ -9,6 +9,7 @@ import Who from "../../components/who/Who"
 import Net from "../../components/net/Net"
 
 import "./Home.scss"
+import Events from "../../components/events/Content"
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <Content />
       <Who />
       <Motivation />
+      <Events/>
       <Partners />
       <Net />
       <Footer />

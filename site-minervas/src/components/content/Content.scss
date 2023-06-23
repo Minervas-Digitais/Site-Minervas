@@ -1,13 +1,12 @@
 .home-content {
-
   display: flex;
+  justify-content: space-between;
   margin-top: -10px;
   margin-bottom: 120px;
 
   .imagem {
-    height: 38vw;
-    position: relative;
-    left: -16.5%;
+    height: 40vw;
+
   }
 
 }

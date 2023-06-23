@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
+
+.text-event {
+  width: 50%;
+  max-width: 500;
+  position: relative;
+  top: 20%;
+  margin: 250px 50px 0px 95px;
+  text-align: left;
+
+  .title {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: 800;
+    font-size: 48px;
+  }
+
+}

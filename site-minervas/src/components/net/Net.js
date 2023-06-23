@@ -16,7 +16,7 @@ function Net() {
       <div className="net-content">
         <Text click={() => handleClick()}  />
         <div style={{ width: '98vw', display: 'flex', justifyContent: 'center'}}>
-        <div style={{border: 'solid 2x red', width: '50%'}}>
+        <div style={{border: 'solid 2xp red', width: '50%'}}>
           <div style={{display: "flex", justifyContent: 'center'}}>
             <img src={exampleimage} className="line1" alt="example1" />
             <img src={exampleimage} className="line1" alt="example2" />
