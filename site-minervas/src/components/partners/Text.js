@@ -1,7 +1,7 @@
 import React from "react"
 
-import Button from "@material-ui/core/Button"
-import { withStyles } from "@material-ui/core/styles"
+import Button from "@mui/material/Button"
+import { withStyles } from "@mui/styles"
 import { redirect } from "react-router-dom"
 import barras from "./../../assets/barras.svg"
 import pizza from "./../../assets/pizza-graph.svg"

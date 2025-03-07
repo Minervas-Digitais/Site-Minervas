@@ -1,6 +1,6 @@
 import React from "react";
 import "./grid-botoes-projetos.scss";
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 
 import LogoGreco from "../../assets/greco.png";
 import LogoSBC from "../../assets/sbc.png";

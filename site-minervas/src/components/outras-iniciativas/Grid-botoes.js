@@ -1,12 +1,12 @@
 import React from "react";
 import "./Grid-botoes.scss";
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 
 import LogoProgramaria from "../../assets/programaria-logo.png";
 import LogoMaisMulheres from "../../assets/mais-mulheres-logo.png";
 import LogoWhoMakersCode from "../../assets/who-makers-code-logo.png";
-import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core/styles";
+import Button from "@mui/material/Button";
+import { withStyles } from "@mui/styles";
 
 const ColorButton = withStyles(() => ({
   root: {

@@ -4,8 +4,8 @@ import logoManamano from '../../assets/logo-manamano.jpg'
 import logoEducaDigital from '../../assets/logo-educa-digital.png'
 // import logoSesc from '../../assets/logo-sesc.png'
 import logoTangua from '../../assets/logo-tangua.png'
-import Button from '@material-ui/core/Button'
-import { withStyles } from '@material-ui/core/styles'
+import Button from '@mui/material/Button'
+import { withStyles } from '@mui/styles'
 import './Gallery.scss';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
