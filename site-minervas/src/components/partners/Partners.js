@@ -1,8 +1,5 @@
 import React, {useRef} from "react"
-
-import exampleimage from "../../assets/example-image.svg"
 import Text from "./Text"
-import TextField from '@mui/material/TextField';
 import Carousel from "./Gallery.js"
 
 import "./Content.scss"
