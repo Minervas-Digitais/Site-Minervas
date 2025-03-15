@@ -18,6 +18,18 @@
     height: 85%;
     width: 80%;
 
+    .button1,
+    .button2,
+    .button3{
+      display: flex;
+      margin: auto;
+      border-radius: 55px;
+      text-transform: capitalize;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffbd59;
+      color: black;
+    }
+
     .botao-grid-header {
       display: flex;
       align-items: center;
@@ -41,11 +53,13 @@
     .texto-botao1,
     .texto-botao2,
     .texto-botao3 {
+      min-height: 109px;
       color: white;
       width: 95%;
       margin: 6% auto 9%;
       text-align: center;
     }
+
   }
 }
 
