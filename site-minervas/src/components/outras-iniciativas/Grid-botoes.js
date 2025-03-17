@@ -37,12 +37,12 @@ class BotoesIniciativas extends React.Component {
 
   abrirPaginaIniciativas(card) {
     if (card === "1") {
-      window.open("https://sites.google.com/view/greco-ppgi-ufrj", "_blank");
+      window.open("https://www.maismulheres.tech/", "_blank");
     }
     if (card === "2") {
-      window.open("https://www.sbc.org.br/", "_blank");
+      window.open("https://www.programaria.org/", "_blank");
     } else {
-      window.open("https://meninas.sbc.org.br/sobre/", "_blank");
+      window.open("https://womakerscode.org/", "_blank");
     }
   }
 
