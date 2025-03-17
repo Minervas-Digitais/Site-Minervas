@@ -1,13 +1,14 @@
 .card-container{
-    width: 23vw;
-    height: 430px;
+    width: 100%;
+    min-height: 249px;
+    max-height: auto;
     border: 1px solid #3F005E;
     border-radius: 20px;
-    margin-top: -100px;
+    margin-top: 50px;
 }
 
 .base-superior {
-    height: 127px;
+    height: 115px;
     background-color: #3F005E;
     border-radius: 20px 20px 0 0;
     display: flex;
@@ -29,33 +30,38 @@
 }
 
 .base-inferior{
-    height: 263px;
+    min-height: 100px;
+    max-height: auto;
     background-color: #FFFFFF;
     border-radius: 0 0 20px 20px;
     padding: 20px;
+    color: black;
 }
 
 .card-title{
     color:#3F005E;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.3rem;
     padding: 10px 0 20px 0;
     display: flex;
     justify-content: space-between;
 }
 
 .card-icon{
-    width: 40px;
+    width: 30px;
 }
 
 .card-description{
-    font-size: 20px;
+    font-size: 0.8rem;
     width: 100%;
 }
 
 .card-container:hover{
     .base-superior {
         background-color: #5E2977;
+        img{
+            filter: invert(0);
+        }
     }
 
     .base-inferior {
@@ -71,40 +77,6 @@
     }
 }
 
-@media screen and (max-width: 970px) {
-
-    .card-container{
-        width: 55vw;
-        height: auto
-    }
-
-    .card-title{
-        font-size: 18px;
-    }
-
-    .card-description{
-        font-size: 16px;
-        width: 100%;
-    }
-
-    .base-superior {
-        height: 100px;
-    }
-
-    .base-inferior {
-        height: 21vh;
-        max-height: 200px;
-    }
-}
-
-@media screen and (max-width: 410px) {
-
-    .card-title{
-        font-size: 16px;
-    }
-
-    .card-description{
-        font-size: 12px;
-    }
-
-}
+.card-container:hover img {
+    filter: invert(76%) sepia(63%) saturate(5128%) hue-rotate(321deg) brightness(96%) contrast(96%);
+  }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react" 
 import { HashLink as Link } from "react-router-hash-link"
-
+import relatorio from "../../assets/Relatório_2023-Mulheres_nas_Graduações_deTI_UFRJ.pdf";
 import "./Menu.scss"
 
 function Menu({ menuOpen }) {
@@ -108,7 +108,7 @@ function Menu({ menuOpen }) {
 
         {isActionsOpen && (
           <div className= "dropdown">
-            <Link smooth to="/acoes" className="dropdown-item">Levantamentos</Link>
+            <Link smooth to={relatorio} target="_blank" className="dropdown-item">Levantamentos</Link>
             <Link smooth 
               to="/acoes#palestras"
               scroll={el => {

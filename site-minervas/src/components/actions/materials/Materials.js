@@ -24,6 +24,8 @@ import logoMinervas01 from "../../../assets/actions/logoMinervas01.png";
 import logoMinervas02 from "../../../assets/actions/logoMinervas02.png";
 import logoMinervas03 from "../../../assets/actions/logoMinervas03.png";
 import logoMinervas04 from "../../../assets/actions/logoMinervas04.png";
+import arrowRight from "../../../assets/actions/arrow-right.svg";
+
 
 import "./Materials.scss";
 
@@ -41,6 +43,9 @@ const ColorButton = withStyles(() => ({
       "&:hover": {
         backgroundColor: "#3F005E",
         color: "#FFFFFF",
+        "&  span img": {
+        filter: "invert(1)",
+        },
       },
     },
   }))(Button)
@@ -74,14 +79,16 @@ function Materials() {
             </Link>
             <div id="Materials" className="materials-title">
                 Materiais
-                <img className="vector" src={vector} alt="Tracinho amarelo" style={{ width: "10%", paddingLeft: "9rem" }}/>
+                <img className="vector" src={vector} alt="Tracinho amarelo" style={{ width: "10%", paddingLeft: "6rem" }}/>
             </div>
             <div className="materials-buttons">
                 <ColorButton variant="contained" color="primary" className='button' disableElevation onClick={() => openURL("https://linktr.ee/minervasdigitais")}>
-                    Drive do Minerv@s →
+                    Drive do Minerv@s 
+                    <span><img src={ arrowRight } alt="ícone"></img></span>
                 </ColorButton>
                 <ColorButton variant="contained" color="primary" className='button' disableElevation onClick={() => openURL("https://medium.com/minervas-digitais-ufrj")}>
-                    Artigos Publicados →
+                    Artigos Publicados 
+                    <span><img src={ arrowRight } alt="ícone"></img></span>
                 </ColorButton>
             </div>
             <div className="downloadable">
