@@ -35,7 +35,7 @@ function ActionsContent() {
 
   return (
     <>
-      <div style={{ height: 140 }}></div>
+      <div id="palestras" style={{ height: 140 }}></div>
       <div className="actions-title" id="Actions">
         Ações
         <img className="vector" src={vector} alt="Tracinho amarelo" style={{ width: "40px" }}/>

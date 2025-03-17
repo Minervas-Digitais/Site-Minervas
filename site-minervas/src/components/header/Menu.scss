@@ -19,17 +19,23 @@
     text-decoration: none;
     padding: 10px 8px;
     color: black;
+    cursor: pointer;
+    border-color: white;
+    background-color: white;
+    border-style: solid;
+
 
     @media (max-width: 970px) {
       display: none;
       border-bottom: 1px solid #808080;
     }
 
-    }
   }
+
+
   .botao-navbar:hover{
-    color: #be5af0;
-    border-radius: 5px;
+      color: #be5af0;
+      //border-radius: 5px;
   }
 
   
@@ -57,12 +63,49 @@
       text-decoration: none;
       padding: 35px 8px;
       color: black;
-    }  
-    .botao-navbar:hover{
-      color: #be5af0;
-      border-radius: 0px;
     }
+  }  
+
+  .dropdown-container {
+    position: relative;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 116%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    background-color: white;
+    box-shadow: 10px 10px 6px 2px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    border-bottom: 1px solid #9f9f9f;
+    border-left: 1px solid #9f9f9f;
+    border-right: 1px solid #9f9f9f;
+    border-radius: 0 0 10px 10px;
+    white-space: nowrap;
+
+    .dropdown-item {
+      padding: 8px 12px;
+      display: flex;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+      background-color: white;
+      border-top: 1px solid #9f9f9f;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.05em;
+
+    }
+
+    .dropdown-item:hover {
+      color: #be5af0;
+    }
+    
+  }
 }
+
 
 .menu-icon {
   display: none;
