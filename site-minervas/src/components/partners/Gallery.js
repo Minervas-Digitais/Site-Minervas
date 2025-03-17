@@ -2,7 +2,6 @@ import React from 'react'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import logoManamano from '../../assets/logo-manamano.jpg'
 import logoEducaDigital from '../../assets/logo-educa-digital.png'
-// import logoSesc from '../../assets/logo-sesc.png'
 import logoTangua from '../../assets/logo-tangua.png'
 import Button from '@mui/material/Button'
 import { withStyles } from '@mui/styles'
@@ -30,28 +29,6 @@ const ColorButton = withStyles(() => ({
   },
 }))(Button)
 
-// function SampleNextArrow(props) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <div
-//       className={className}
-//       style={{ ...style, display: "block", background: "red" }}
-//       onClick={onClick}
-//     />
-//   );
-// }
-
-// function SamplePrevArrow(props) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <div
-//       className={className}
-//       style={{ ...style, display: "block", background: "green", fontSize: "14px" }}
-//       onClick={onClick}
-//     />
-//   );
-// }
-
 class Carousel extends React.Component {
   constructor(props) {
     super(props)
@@ -59,28 +36,6 @@ class Carousel extends React.Component {
       openChat: false,
     }
   }
-
-  // responsive = {
-  //   0: { items: 1 },
-  //   300: { items: 1 },
-  //   500: { items: 1 },
-  //   700: { items: 1 },
-  //   871: { items: 2 },
-  //   1024: { items: 3 },
-  //   1920: { items: 4 },
-  //   600: { items: 1 },
-  //   960: { items: 2},
-  //   1076: { items: 3, itemsFit: 'contain' },
-  //   1280: { items: 3, itemsFit: 'fill' },
-  //   2200: { items: 1 },
-  //   3200: { items: 1 },
-  // }
-
-  // openChat = () => {
-  //   this.setState({
-  //     openChat: true,
-  //   })
-  // }
 
   handleClick1(){
     window.open('https://educadigital.org.br/', '_blank');
@@ -96,8 +51,6 @@ class Carousel extends React.Component {
   
 
   render() {
-    const { click } = this.props
-
     var settings = {
       dots: false,
       infinite: true,
