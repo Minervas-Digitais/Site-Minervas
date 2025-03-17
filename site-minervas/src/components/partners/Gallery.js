@@ -23,7 +23,6 @@ const ColorButton = withStyles(() => ({
     fontWeight: 300,
     backgroundColor: '#ffbd59',
     '&:hover': {
-      backgroundColor: '#13BADE',
       fontWeight: 'bold',
     },
   },
@@ -96,7 +95,7 @@ class Carousel extends React.Component {
         <Slider {...settings}>
           <div className='carrossel-item'>
             <img
-              style={{ height: '80%', margin: 'auto'}}
+              style={{ height: '77%', margin: 'auto'}}
               src={logoEducaDigital}
               role="presentation"
               alt="Educa Digital"
@@ -112,7 +111,7 @@ class Carousel extends React.Component {
           </div>
           <div className='carrossel-item'>
             <img
-              style={{ height: '80%', margin: 'auto'}}
+              style={{ height: '77%', margin: 'auto'}}
               src={logoManamano}
               role="presentation"
               alt="ManaMano"
@@ -128,7 +127,7 @@ class Carousel extends React.Component {
           </div>
           <div className='carrossel-item'>
             <img
-              style={{ height: '80%', margin: 'auto'}}
+              style={{ height: '77%', margin: 'auto'}}
               src={logoTangua}
               role="presentation"
               alt="Tanguá"
