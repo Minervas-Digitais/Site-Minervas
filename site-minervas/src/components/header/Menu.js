@@ -122,7 +122,7 @@ function Menu({ menuOpen }) {
             <Link smooth 
               to="/acoes#Materials"
               scroll={el => {
-                const yOffset = 200;
+                const yOffset = -150;
                 const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
                 window.scrollTo({ top: y, behavior: 'smooth' });
               }}
