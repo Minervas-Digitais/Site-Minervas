@@ -1,70 +1,54 @@
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+/* Botão hamburguer (☰ / ✕) */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3F005E;
+  z-index: 1100;
+
+  @media (max-width: 970px) {
+    display: block;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+  }
+}
+
+//desktop menu
 .button-group {
   display: flex;
   gap: 60px;
   font-family: "Segoe UI";
 
-  @media (max-width: 970px) {
-    transform: translateX(100%);
-    transition: left 6s;
-  }
-
   .botao-navbar {
-    width: auto;
-    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
     font-size: 1.05em;
     text-decoration: none;
-    padding: 10px 8px;
     color: black;
     cursor: pointer;
     border-color: white;
     background-color: white;
     border-style: solid;
+    border: none;
 
-
-    @media (max-width: 970px) {
-      display: none;
-      border-bottom: 1px solid #808080;
-    }
-
-  }
-
-
-  .botao-navbar:hover{
+    &:hover {
       color: #be5af0;
-      //border-radius: 5px;
-  }
-
-  
-  .button-group.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 79px; 
-    right: 0px;
-    background-color: #FFFFFF;
-    box-shadow: 0px 5px 5px 5px rgba(51, 51, 51, 0.2);
-    width: 180px;
-    transform: translateX(0);
-    transition: transform 0.3s ease-in-out;
-    gap: 0px;
-
-    .botao-navbar {
-      width: auto;
-      height: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 1.05em;
-      text-decoration: none;
-      padding: 35px 8px;
-      color: black;
     }
-  }  
+  }
 
   .dropdown-container {
     position: relative;
@@ -75,58 +59,96 @@
     top: 116%;
     left: 50%;
     transform: translateX(-50%);
-    display: block;
     background-color: white;
     box-shadow: 10px 10px 6px 2px rgba(0, 0, 0, 0.3);
     z-index: 1;
-    border-bottom: 1px solid #9f9f9f;
-    border-left: 1px solid #9f9f9f;
-    border-right: 1px solid #9f9f9f;
+    border: 1px solid #9f9f9f;
     border-radius: 0 0 10px 10px;
     white-space: nowrap;
 
     .dropdown-item {
       padding: 8px 12px;
       display: flex;
+      justify-content: center;
       text-decoration: none;
       color: black;
-      cursor: pointer;
-      background-color: white;
-      border-top: 1px solid #9f9f9f;
-      justify-content: center;
       font-weight: 600;
       font-size: 1.05em;
 
+      &:hover {
+        color: #be5af0;
+      }
     }
-
-    .dropdown-item:hover {
-      color: #be5af0;
-    }
-    
   }
 }
 
-
-.menu-icon {
-  display: none;
-  cursor: pointer;
-
-  svg {
-    width: 30px;
-    height: 30px;
-    fill: #3F005E;
-  }
-}
-
+//mobile menu
 @media (max-width: 970px) {
-  .menu-icon {
-    display: flex;
+  .button-group {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: fixed;
-    right: 35px;
+    inset: 0; //cobre a tela inteira
+    background: rgba(255, 255, 255, 0.97);
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    gap: 2rem;
+
+    .botao-navbar {
+      //display: block;
+      font-size: 1.5em;
+      font-weight: 700;
+      color: #3F005E;
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        color: #be5af0;
+      }
+    }
+    .dropdown-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .botao-navbar {
+        text-align: center;
+        width: 100%;
+      }
+
+      .dropdown {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: none;
+        border: none;
+      }
+
+      .dropdown-item {
+        font-size: 1.3em;
+        padding: 0.5rem;
+        color: #3F005E;
+
+        &:hover {
+          color: #be5af0;
+        }
+      }
+    }
   }
 
-  .logo.open {
-    display: none;
+  .button-group.open {
+    display: flex;
+    transform: translateY(0);
   }
-  
 }
