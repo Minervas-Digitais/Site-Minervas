@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react" 
+import React, { useState, useEffect } from "react"
 import { HashLink as Link } from "react-router-hash-link"
 import relatorio from "../../assets/Relatório_2023-Mulheres_nas_Graduações_deTI_UFRJ.pdf";
 import "./Menu.scss"
 
-function Menu({ menuOpen }) {
-
+function Menu() {
   const [isAboutOpen, setAboutOpen] = useState(false);
   const [isActionsOpen, setActionsOpen] = useState(false);
+  const [isMobileOpen, setMobileOpen] = useState(false);
 
   const toggleAbout = (e) => {
     e.preventDefault();
@@ -51,24 +51,32 @@ function Menu({ menuOpen }) {
     };
   }, []);
 
-
-
   return (
-    <div className={`button-group ${menuOpen ? "open" : ""}`}>
-      <Link to ="/#home" smooth className="botao-navbar">
-        Home
-      </Link>
-      
-      <div className="dropdown-container">
+    <nav className="navbar">
+      {/* menu mobile */}
+      <button
+        className="menu-toggle"
+        onClick={() => setMobileOpen(!isMobileOpen)}
+      >
+        {isMobileOpen ? "✕" : "☰"}
+      </button>
+
+      {/* menu principal */}
+      <div className={`button-group ${isMobileOpen ? "open" : ""}`}>
+        <Link to ="/#home" smooth className="botao-navbar" onClick={() => setMobileOpen(false)}>
+          Home
+        </Link>
+
+        <div className="dropdown-container">
         <button smooth to="/sobre#sobre" className="botao-navbar" onClick={toggleAbout}>
           Sobre {isAboutOpen ? '▴' : '▾'}
-        </button>
+          </button>
 
-        {isAboutOpen && (
+          {isAboutOpen && (
           <div className= "dropdown">
-            <Link smooth to="/sobre#sobre" className="dropdown-item">Sobre o Programa</Link>
+              <Link smooth to="/sobre#sobre" className="dropdown-item">Sobre o Programa</Link>
             <Link smooth 
-              to="/sobre#projetos"
+                to="/sobre#projetos"
               scroll={el => {
                 const yOffset = -100;
                 const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -76,9 +84,9 @@ function Menu({ menuOpen }) {
               }}
               className="dropdown-item">
                 Projetos Integrados
-            </Link>
+              </Link>
             <Link smooth 
-              to="/sobre#motivacao"
+                to="/sobre#motivacao"
               scroll={el => {
                 const yOffset = -100;
                 const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -86,9 +94,9 @@ function Menu({ menuOpen }) {
               }}
               className="dropdown-item">
                 O que nos Move
-            </Link>
+              </Link>
             <Link smooth 
-              to="/sobre#equipe"
+                to="/sobre#equipe"
               scroll={el => {
                 const yOffset = -100;
                 const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -96,21 +104,21 @@ function Menu({ menuOpen }) {
               }}
               className="dropdown-item">
                 Nossa Equipe
-            </Link>
-          </div>
-        )}
-      </div>
+              </Link>
+            </div>
+          )}
+        </div>
 
-      <div className="dropdown-container">
-        <button className="botao-navbar" onClick={toggleActions}>
+        <div className="dropdown-container">
+          <button className="botao-navbar" onClick={toggleActions}>
           Ações {isActionsOpen ? '▴' : '▾'}
-        </button>
+          </button>
 
-        {isActionsOpen && (
+          {isActionsOpen && (
           <div className= "dropdown">
             <Link smooth to={relatorio} target="_blank" className="dropdown-item">Levantamentos</Link>
             <Link smooth 
-              to="/acoes#palestras"
+                to="/acoes#palestras"
               scroll={el => {
                 const yOffset = -100;
                 const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -118,9 +126,9 @@ function Menu({ menuOpen }) {
               }}
               className="dropdown-item">
                 Palestras e Cursos
-            </Link>
+              </Link>
             <Link smooth 
-              to="/acoes#Materials"
+                to="/acoes#Materials"
               scroll={el => {
                 const yOffset = -150;
                 const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -128,17 +136,23 @@ function Menu({ menuOpen }) {
               }}
               className="dropdown-item">
                 Materiais
-            </Link>
-          </div>
-        )}
+              </Link>
+            </div>
+          )}
+        </div>
+
+        <Link
+          to="/#footer"
+          smooth
+          className="botao-navbar"
+          scroll={(el) => scrollWithOffset(el, 108)}
+          onClick={() => setMobileOpen(false)}
+        >
+          Contato
+        </Link>
+
       </div>
-      
-
-      <Link to="/#footer" smooth className="botao-navbar" scroll={el => scrollWithOffset(el, 108)}>
-        Contato
-      </Link>
-
-    </div>
+    </nav>
   )
 }
 

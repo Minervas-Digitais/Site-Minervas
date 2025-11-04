@@ -43,9 +43,6 @@ function Header() {
   return (
     <div className="header">
       <img src={logonova} className="logo" alt="logo" />
-      <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-        <FaBars />
-      </div>
       <Menu menuOpen={menuOpen}/>
     </div>
   )
