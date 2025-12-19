@@ -1,51 +1,66 @@
-import React, { useState, useEffect } from "react"
-import { HashLink as Link } from "react-router-hash-link"
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import relatorio from "../../assets/Relatório_2023-Mulheres_nas_Graduações_deTI_UFRJ.pdf";
-import "./Menu.scss"
+import "./Menu.scss";
 
 function Menu() {
   const [isAboutOpen, setAboutOpen] = useState(false);
   const [isActionsOpen, setActionsOpen] = useState(false);
   const [isMobileOpen, setMobileOpen] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const toggleAbout = (e) => {
     e.preventDefault();
+    
     setAboutOpen(!isAboutOpen);
-    setActionsOpen(false);  // para impedir que abram dois dropdowns ao mesmo tempo, fecha o do "ações"
+    setActionsOpen(false);
   };
-
-  
-
 
   const toggleActions = (e) => {
     e.preventDefault();
+     
     setActionsOpen(!isActionsOpen);
-    setAboutOpen(false);  // para impedir que abram dois dropdowns ao mesmo tempo, fecha o do "sobre"
+    setAboutOpen(false);
   };
 
-  
+  const goTo = (path, id, offset = 100) => {
+    // fecha menus
+    setMobileOpen(false);
+    setAboutOpen(false);
+    setActionsOpen(false);
 
-  const scrollWithOffset = (el, offset) => {
-    const elementPosition = el.offsetTop - offset;
-    window.scroll({
-      top: elementPosition,
-      left: 0,
-      behavior: "smooth"
-    });
-  }
+    const doScroll = () => {
+      if (!id) return;
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const y =
+        el.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    };
+
+    if (location.pathname !== path) {
+      navigate(path);
+      // espera a tela renderizar
+      setTimeout(doScroll, 80);
+    } else {
+      doScroll();
+    }
+  };
 
   useEffect(() => {
-    const closeDropdownsOnOutsideClick = (e) => {   // Verifica se o clique foi fora dos dropdowns
-      if (!e.target.closest(".dropdown") && !e.target.closest(".botao-navbar")) {
+    const closeDropdownsOnOutsideClick = (e) => {
+      const target = e.target ;
+      if (!target.closest(".dropdown") && !target.closest(".botao-navbar")) {
         setAboutOpen(false);
         setActionsOpen(false);
       }
     };
 
-    // Adiciona o listener de clique
     document.addEventListener("click", closeDropdownsOnOutsideClick);
-
-    // Remove o listener ao desmontar o componente
     return () => {
       document.removeEventListener("click", closeDropdownsOnOutsideClick);
     };
@@ -57,103 +72,122 @@ function Menu() {
       <button
         className="menu-toggle"
         onClick={() => setMobileOpen(!isMobileOpen)}
+        type="button"
       >
         {isMobileOpen ? "✕" : "☰"}
       </button>
 
       {/* menu principal */}
       <div className={`button-group ${isMobileOpen ? "open" : ""}`}>
-        <Link to ="/#home" smooth className="botao-navbar" onClick={() => setMobileOpen(false)}>
+        {/* HOME */}
+        <button
+          type="button"
+          className="botao-navbar"
+          onClick={() => goTo("/", "home", 108)}
+        >
           Home
-        </Link>
+        </button>
 
+        {/* SOBRE */}
         <div className="dropdown-container">
-        <button smooth to="/sobre#sobre" className="botao-navbar" onClick={toggleAbout}>
-          Sobre {isAboutOpen ? '▴' : '▾'}
+          <button
+            type="button"
+            className="botao-navbar"
+            onClick={toggleAbout}
+          >
+            Sobre {isAboutOpen ? "▴" : "▾"}
           </button>
 
           {isAboutOpen && (
-          <div className= "dropdown">
-              <Link smooth to="/sobre#sobre" className="dropdown-item">Sobre o Programa</Link>
-            <Link smooth 
-                to="/sobre#projetos"
-              scroll={el => {
-                const yOffset = -100;
-                const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-              }}
-              className="dropdown-item">
+            <div className="dropdown">
+              <button
+                type="button"
+                className="dropdown-item"
+                onClick={() => goTo("/sobre", "sobre", 100)}
+              >
+                Sobre o Programa
+              </button>
+
+              <button
+                type="button"
+                className="dropdown-item"
+                onClick={() => goTo("/sobre", "projetos", 100)}
+              >
                 Projetos Integrados
-              </Link>
-            <Link smooth 
-                to="/sobre#motivacao"
-              scroll={el => {
-                const yOffset = -100;
-                const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-              }}
-              className="dropdown-item">
+              </button>
+
+              <button
+                type="button"
+                className="dropdown-item"
+                onClick={() => goTo("/sobre", "motivacao", 100)}
+              >
                 O que nos Move
-              </Link>
-            <Link smooth 
-                to="/sobre#equipe"
-              scroll={el => {
-                const yOffset = -100;
-                const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-              }}
-              className="dropdown-item">
+              </button>
+
+              <button
+                type="button"
+                className="dropdown-item"
+                onClick={() => goTo("/sobre", "equipe", 100)}
+              >
                 Nossa Equipe
-              </Link>
+              </button>
             </div>
           )}
         </div>
 
+        {/* AÇÕES */}
         <div className="dropdown-container">
-          <button className="botao-navbar" onClick={toggleActions}>
-          Ações {isActionsOpen ? '▴' : '▾'}
+          <button type="button" className="botao-navbar" onClick={toggleActions}>
+            Ações {isActionsOpen ? "▴" : "▾"}
           </button>
 
           {isActionsOpen && (
-          <div className= "dropdown">
-            <Link smooth to={relatorio} target="_blank" className="dropdown-item">Levantamentos</Link>
-            <Link smooth 
-                to="/acoes#palestras"
-              scroll={el => {
-                const yOffset = -100;
-                const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-              }}
-              className="dropdown-item">
+            <div className="dropdown">
+              {/* PDF: sempre <a href> */}
+              <a
+                href={relatorio}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dropdown-item"
+                onClick={() => {
+                  setMobileOpen(false);
+                  setAboutOpen(false);
+                  setActionsOpen(false);
+                }}
+              >
+                Levantamentos
+              </a>
+
+              <button
+                type="button"
+                className="dropdown-item"
+                onClick={() => goTo("/acoes", "palestras", 100)}
+              >
                 Palestras e Cursos
-              </Link>
-            <Link smooth 
-                to="/acoes#Materials"
-              scroll={el => {
-                const yOffset = -150;
-                const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-              }}
-              className="dropdown-item">
+              </button>
+
+              <button
+                type="button"
+                className="dropdown-item"
+                onClick={() => goTo("/acoes", "Materials", 150)}
+              >
                 Materiais
-              </Link>
+              </button>
             </div>
           )}
         </div>
 
-        <Link
-          to="/#footer"
-          smooth
+        {/* CONTATO */}
+        <button
+          type="button"
           className="botao-navbar"
-          scroll={(el) => scrollWithOffset(el, 108)}
-          onClick={() => setMobileOpen(false)}
+          onClick={() => goTo("/", "footer", 108)}
         >
           Contato
-        </Link>
-
+        </button>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Menu
+export default Menu;

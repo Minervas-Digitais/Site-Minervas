@@ -49,7 +49,7 @@ function ActionsContent() {
                 title={"Levantamentos"}
                 description={"Explore métricas e pesquisas realiadas sobre a temática feminina na tecnologia."}
                 icon={ arrowRight }
-                link={ relatorio }> {/* aqui vai ter o link para levantamentos! */ }
+                href={ relatorio }> {/* aqui vai ter o link para levantamentos! */ }
               </Card>
             </Grid>
             <Grid item xl={4} lg={4} xs={12} sm={12} md={6}>
