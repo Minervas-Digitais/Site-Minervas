@@ -186,8 +186,14 @@ function Menu() {
           Contato
         </button>
       </div>
-    </nav>
-  );
+      
+
+      <Link to="/#Contact" smooth className="botao-navbar" scroll={el => scrollWithOffset(el, 108)}>
+        Contato
+      </Link>
+
+    </div>
+  )
 }
 
 export default Menu;
