@@ -134,7 +134,7 @@ function Menu({ menuOpen }) {
       </div>
       
 
-      <Link to="/#footer" smooth className="botao-navbar" scroll={el => scrollWithOffset(el, 108)}>
+      <Link to="/#Contact" smooth className="botao-navbar" scroll={el => scrollWithOffset(el, 108)}>
         Contato
       </Link>
 
