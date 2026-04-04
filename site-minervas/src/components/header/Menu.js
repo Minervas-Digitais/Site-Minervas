@@ -181,18 +181,12 @@ function Menu() {
         <button
           type="button"
           className="botao-navbar"
-          onClick={() => goTo("/", "footer", 108)}
+          onClick={() => goTo("/", "Contact", 108)}
         >
           Contato
         </button>
       </div>
-      
-
-      <Link to="/#Contact" smooth className="botao-navbar" scroll={el => scrollWithOffset(el, 108)}>
-        Contato
-      </Link>
-
-    </div>
+    </nav>
   )
 }
 
