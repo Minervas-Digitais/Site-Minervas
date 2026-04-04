@@ -29,27 +29,31 @@ import arrowRight from "../../../assets/actions/arrow-right.svg";
 
 import "./Materials.scss";
 
-const ColorButton = withStyles(() => ({
-    root: {
-      width: "288px",
-      height: "63px",
-      textTransform: "none",
-      border: "1px solid #3F005E",
-      borderRadius: 25,
-      fontFamily: "Lato",
-      backgroundColor: "#FFFFFF",
-      color: "#3F005E",
-      margin: "45px",
-      "&:hover": {
-        backgroundColor: "#3F005E",
-        color: "#FFFFFF",
-        "&  span img": {
-        filter: "invert(1)",
-        },
-      },
-    },
-  }))(Button)
-  
+import { styled } from "@mui/material/styles";
+
+const ColorButton = styled(Button)(() => ({
+  width: "288px",
+  height: "63px",
+  textTransform: "none",
+  border: "1px solid #3F005E",
+  borderRadius: 25,
+  fontFamily: "Lato",
+  backgroundColor: "#FFFFFF",
+  color: "#3F005E",
+  margin: "45px",
+  boxShadow: "none",
+  "&:hover": {
+    backgroundColor: "#3F005E",
+    color: "#FFFFFF",
+    boxShadow: "none",
+  },
+  "& span img": {
+    transition: "filter 0.2s ease",
+  },
+  "&:hover span img": {
+    filter: "invert(1)",
+  },
+}));
 
 
 function Materials() {
@@ -82,11 +86,11 @@ function Materials() {
                 <img className="vector" src={vector} alt="Tracinho amarelo" style={{ width: "10%", paddingLeft: "6rem" }}/>
             </div>
             <div className="materials-buttons">
-                <ColorButton variant="contained" color="primary" className='button' disableElevation onClick={() => openURL("https://linktr.ee/minervasdigitais")}>
+                <ColorButton variant="contained" className='button' disableElevation onClick={() => openURL("https://linktr.ee/minervasdigitais")}>
                     Drive do Minerv@s 
                     <span><img src={ arrowRight } alt="ícone"></img></span>
                 </ColorButton>
-                <ColorButton variant="contained" color="primary" className='button' disableElevation onClick={() => openURL("https://medium.com/minervas-digitais-ufrj")}>
+                <ColorButton variant="contained" className='button' disableElevation onClick={() => openURL("https://medium.com/minervas-digitais-ufrj")}>
                     Artigos Publicados 
                     <span><img src={ arrowRight } alt="ícone"></img></span>
                 </ColorButton>
