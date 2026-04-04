@@ -82,6 +82,7 @@ class BotoesIniciativas extends React.Component {
               <div className="botao-grid-header">
                 <img
                   className="header-image"
+                  style={{ paddingBottom: "3%" }}
                   src={LogoProgramaria}
                   role="presentation"
                   alt="Tanguá"
