@@ -4,140 +4,110 @@
   background: #3F005E;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; // Centraliza o conjunto todo na tela
 }
 
-.vertical-line {
-  height: 85%;
-  margin: 0 20px;
+// A linha vertical branca no meio
+.divider {
+  background-color: white; 
+  height: 60%;            
+  width: 1px;             
+  opacity: 0.3;           
+  margin: 0 40px;         // Espaço lateral da linha
 }
 
 .left-side {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: center;   // Alinha o bloco (texto + ícones) à direita, encostando na linha
   flex: 1;
+}
+
+.copyright {
+  color: white;
+  text-align: center;       // Alinha as linhas de texto internamente à direita
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  max-width: none;
+  font-family: sans-serif; // Ou a fonte que você estiver usando no projeto
 }
 
 .social-icons {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.copyright {
-  margin-bottom: 20px;
-  color: white;
-  text-align: center;
-  font-size: 1.3rem;
-}
-
-.logoMeninasDigitais{
-  width: 242px;
-}
-
-.logoIC{
-  width: 240px;
-}
-
-.logoSBC{
-  width: 230px;
+  justify-content: center; // Alinha os ícones à direita
+  gap: 15px;
 }
 
 .right-side {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;      // Centraliza as logos horizontalmente no seu próprio bloco
   flex: 1;
+  gap: 20px;
 }
 
-.top-logos {
-  width: 94%;
+.top-logos-row {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  gap: 40px;
+}
+
+.class-MeninasDigitais, .class-IC, .class-SBC {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoMeninasDigitais, .logoIC {
+  max-width: 130px;
+  height: auto;
+}
+
+.logoSBC {
+  max-width: 200px;
+  height: auto;
 }
 
 .project-text {
   color: white;
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   text-align: center;
-  margin-top: -20px;
+  margin-top: 5px;
 }
 
-.bottom-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
-}
+/* --- Responsividade --- */
 
-/* a partir de 1500px pra baixo mudar o estilo do footer! */
-@media screen and (max-width: 1500px) {
-  .vertical-line{
-    display: none;
+@media screen and (max-width: 1200px) {
+  .divider {
+    display: none; // Esconde a linha em telas menores
   }
 
-  .footer{
-    display: block;
+  .footer {
+    height: auto;
+    padding: 40px 0;
+    flex-direction: column; // Empilha o texto em cima das logos
+    gap: 40px;
   }
 
-  .top-logos{
-    width: auto;
+  .left-side {
+    align-items: center; // Centraliza o texto no mobile
+    padding: 0;
   }
 
-  .logoIC{
-    padding: 0 100px;
+  .copyright {
+    text-align: center;
   }
 
-  .left-side{
-    padding-top: 50px;
-  }
-
-  .right-side{
-    flex-direction: row;
+  .social-icons {
     justify-content: center;
-    padding-top: 30px;
   }
 }
 
-@media screen and (max-width: 970px) {
-  .footer{
-    font-size: 20px;
-  }
-
-  .copyright{
-    font-size: 1rem;
-  }
-
-  .logoMeninasDigitais{
-    width: 180px;
-  }
-
-  .logoIC{
-    width: 180px;
-    padding: 0 50px;
-  }
-
-  .logoSBC{
-    width: 180px;
-  }
-}
-
-/* 650px fazer alguma coisa com logos */
 @media screen and (max-width: 650px) {
-  .footer{
-    height: 600px;
-  }
-
-  .top-logos,
-  .bottom-logo,
-  .right-side {
-    flex-direction: column;
-  }
-
-  .logoIC {
-    padding-top: 20px;
+  .top-logos-row {
+    flex-direction: column; // Empilha as logos de cima no celular
+    gap: 20px;
   }
 }
