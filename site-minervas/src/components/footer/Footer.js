@@ -13,6 +13,9 @@ function Footer() {
   return (
     <div className="footer" id="footer">
       <div className="left-side">
+        <button className="contact-button" onClick={() => window.location.href = "mailto:contato@minervasdigitais.ufrj.br"}>
+          Contato
+        </button>
         <div className="copyright">
           Minerv@s Digitais UFRJ © 2024 - Todos os direitos reservados
         </div>
