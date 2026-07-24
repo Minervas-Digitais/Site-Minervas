@@ -17,7 +17,7 @@ function Who() {
           <Text click={() => handleClick()}/>
         </div>
         <div className="who-conteudo-direito">
-          <img src={photo} className="image-who" alt="imagem de quem é as minervas" />
+          <img src={photo} className="image-who" alt="imagem dos alunos que fazem parte do minervas" />
         </div>
       </div>
     </div>
