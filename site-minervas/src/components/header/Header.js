@@ -8,7 +8,6 @@ import "./Header.scss"
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const nova = "";
 
   useEffect(() => {
     const closeMenuIfLargeScreen = () => { // para fechar o menu se ele estiver aberto e a tela é aumentada
