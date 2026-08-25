@@ -65,5 +65,11 @@
   },
   "devDependencies": {
     "ajv": "^8.17.1"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.5.1": true,
+    "core-js-pure@3.46.0": true,
+    "yarn@1.22.22": true,
+    "core-js@3.46.0": true
   }
 }

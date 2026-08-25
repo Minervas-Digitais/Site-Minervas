@@ -97,3 +97,12 @@
     };
   }
 }
+
+@media (min-width: 961px) {
+  .carrossel {
+    .slick-next,
+    .slick-prev {
+      display: none !important;
+    }
+  }
+}
