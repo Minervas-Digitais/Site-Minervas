@@ -1,8 +1,7 @@
 import React from "react"
 
-import Button from "@material-ui/core/Button"
-import { withStyles } from "@material-ui/core/styles"
-import { redirect } from "react-router-dom"
+import Button from "@mui/material/Button"
+import { withStyles } from "@mui/styles"
 
 import "./Text.scss"
 
@@ -41,9 +40,6 @@ class Text extends React.Component {
   }
 
   render(){
-    const {click} = this.props
-    console.log(this.props)
-
     return (
       <div className="content">
         <div className="title">

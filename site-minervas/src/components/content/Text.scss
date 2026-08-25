@@ -37,6 +37,9 @@
 
     .button {
       width: 200px;
+      border-radius: 55px;
+      text-transform: capitalize;
+      font-family: 'Poppins', sans-serif;
       background-image: linear-gradient(to top, #AE7CC6 0%, #3F005E 100%);
       font-size: 1.3rem;
     }

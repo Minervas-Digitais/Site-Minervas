@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core/styles";
+import Button from "@mui/material/Button";
+import { withStyles } from "@mui/styles";
 
 import arrow from "../../../assets/actions/arrow-down.svg";
 import arrowUp from "../../../assets/actions/actions-arrow.svg";
@@ -24,27 +24,36 @@ import logoMinervas01 from "../../../assets/actions/logoMinervas01.png";
 import logoMinervas02 from "../../../assets/actions/logoMinervas02.png";
 import logoMinervas03 from "../../../assets/actions/logoMinervas03.png";
 import logoMinervas04 from "../../../assets/actions/logoMinervas04.png";
+import arrowRight from "../../../assets/actions/arrow-right.svg";
+
 
 import "./Materials.scss";
 
-const ColorButton = withStyles(() => ({
-    root: {
-      width: "288px",
-      height: "63px",
-      textTransform: "none",
-      border: "1px solid #3F005E",
-      borderRadius: 25,
-      fontFamily: "Lato",
-      backgroundColor: "#FFFFFF",
-      color: "#3F005E",
-      margin: "45px",
-      "&:hover": {
-        backgroundColor: "#3F005E",
-        color: "#FFFFFF",
-      },
-    },
-  }))(Button)
-  
+import { styled } from "@mui/material/styles";
+
+const ColorButton = styled(Button)(() => ({
+  width: "288px",
+  height: "63px",
+  textTransform: "none",
+  border: "1px solid #3F005E",
+  borderRadius: 25,
+  fontFamily: "Lato",
+  backgroundColor: "#FFFFFF",
+  color: "#3F005E",
+  margin: "45px",
+  boxShadow: "none",
+  "&:hover": {
+    backgroundColor: "#3F005E",
+    color: "#FFFFFF",
+    boxShadow: "none",
+  },
+  "& span img": {
+    transition: "filter 0.2s ease",
+  },
+  "&:hover span img": {
+    filter: "invert(1)",
+  },
+}));
 
 
 function Materials() {
@@ -74,14 +83,16 @@ function Materials() {
             </Link>
             <div id="Materials" className="materials-title">
                 Materiais
-                <img className="vector" src={vector} alt="Tracinho amarelo" style={{ width: "10%", paddingLeft: "9rem" }}/>
+                <img className="vector" src={vector} alt="Tracinho amarelo" style={{ width: "10%", paddingLeft: "6rem" }}/>
             </div>
             <div className="materials-buttons">
-                <ColorButton variant="contained" color="primary" className='button' disableElevation onClick={() => openURL("https://linktr.ee/minervasdigitais")}>
-                    Drive do Minerv@s →
+                <ColorButton variant="contained" className='button' disableElevation onClick={() => openURL("https://linktr.ee/minervasdigitais")}>
+                    Drive do Minerv@s 
+                    <span><img src={ arrowRight } alt="ícone"></img></span>
                 </ColorButton>
-                <ColorButton variant="contained" color="primary" className='button' disableElevation onClick={() => openURL("https://medium.com/minervas-digitais-ufrj")}>
-                    Artigos Publicados →
+                <ColorButton variant="contained" className='button' disableElevation onClick={() => openURL("https://medium.com/minervas-digitais-ufrj")}>
+                    Artigos Publicados 
+                    <span><img src={ arrowRight } alt="ícone"></img></span>
                 </ColorButton>
             </div>
             <div className="downloadable">

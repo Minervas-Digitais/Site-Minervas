@@ -15,7 +15,7 @@ import "./Home.scss"
 
 function Home() {
   return (
-    <div className="Home" id="#">
+    <div className="Home" id="home">
       <Header />
       <Content />
       <Who />

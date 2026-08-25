@@ -1,5 +1,4 @@
 import React, {useRef} from "react";
-import exampleimage from "../../assets/example-image.svg";
 import Text from "./Text";
 import photo from "../../assets/group-photo.jpg"
 import "./Content.scss";
@@ -18,7 +17,7 @@ function Who() {
           <Text click={() => handleClick()}/>
         </div>
         <div className="who-conteudo-direito">
-          <img src={photo} className="image-who" alt="imagem de quem é as minervas" />
+          <img src={photo} className="image-who" alt="imagem dos alunos que fazem parte do minervas" />
         </div>
       </div>
     </div>

@@ -1,12 +1,12 @@
 import React from "react";
 import "./Grid-botoes.scss";
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 
 import LogoProgramaria from "../../assets/programaria-logo.png";
 import LogoMaisMulheres from "../../assets/mais-mulheres-logo.png";
 import LogoWhoMakersCode from "../../assets/who-makers-code-logo.png";
-import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core/styles";
+import Button from "@mui/material/Button";
+import { withStyles } from "@mui/styles";
 
 const ColorButton = withStyles(() => ({
   root: {
@@ -37,12 +37,12 @@ class BotoesIniciativas extends React.Component {
 
   abrirPaginaIniciativas(card) {
     if (card === "1") {
-      window.open("https://sites.google.com/view/greco-ppgi-ufrj", "_blank");
+      window.open("https://www.maismulheres.tech/", "_blank");
     }
     if (card === "2") {
-      window.open("https://www.sbc.org.br/", "_blank");
+      window.open("https://www.programaria.org/", "_blank");
     } else {
-      window.open("https://meninas.sbc.org.br/sobre/", "_blank");
+      window.open("https://womakerscode.org/", "_blank");
     }
   }
 
@@ -82,6 +82,7 @@ class BotoesIniciativas extends React.Component {
               <div className="botao-grid-header">
                 <img
                   className="header-image"
+                  style={{ paddingBottom: "3%" }}
                   src={LogoProgramaria}
                   role="presentation"
                   alt="Tanguá"
