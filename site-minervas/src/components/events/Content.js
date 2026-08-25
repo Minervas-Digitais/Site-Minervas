@@ -1,11 +1,10 @@
-import React, { useRef, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import "./Content.scss"
 import Carousel1 from "./Gallery1"
 import Carousel2 from "./Gallery2"
 import TextEvent from "./Text"
 
 function EventsContent() {
-    const ref = useRef(null);
     const [transform, setTransform] = useState('rotate(-7.21deg)')
 
     useEffect(() => { // tira a rotação do slider na versão mobile
@@ -26,9 +25,6 @@ function EventsContent() {
         }
     }, [])
 
-    const handleClick = () => {
-        ref.current?.scrollIntoView({ behavior: 'smooth' });
-    }
     return (
         <div className="events-container-background" id="Events">
             <div className="events-content">

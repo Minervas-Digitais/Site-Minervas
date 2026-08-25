@@ -51,16 +51,18 @@
   height: 160px;
   border-radius: 14px;
   position: relative;
+
+  .button{
+    border-radius: 55px;
+      text-transform: capitalize;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffbd59;
+      color: black;
+  }
 }
 
 .slick-slide div{
   margin: 0 1rem;
-}
-
-.button{
-  span{
-    font-size: 1.2rem;
-  }
 }
 
 
@@ -93,5 +95,14 @@
     span{
       font-size: 0.9rem;
     };
+  }
+}
+
+@media (min-width: 961px) {
+  .carrossel {
+    .slick-next,
+    .slick-prev {
+      display: none !important;
+    }
   }
 }

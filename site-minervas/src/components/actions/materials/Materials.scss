@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap'); 
+
 .actions-container{
     display: flex;
     flex-direction: column;
@@ -7,11 +9,34 @@
 
 .materials-title{
     font-family: "Poppins", sans-serif;
-    font-size: 72px;
+    font-size: 3rem;
+    font-weight: 800;
     color: #3F005E;
     display: grid;
     gap: 6px;
     text-align: center;
+}
+
+.materials-buttons{
+    display: flex;
+    gap: 30px;
+    .button{
+        border: 1px solid #3F005E;
+        background-color: #FFFFFF;
+        border-radius: 55px;
+        text-transform: capitalize;
+        color: #3F005E;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        margin-top: 30px;
+        span{
+            display: flex;
+            align-items: center;
+            width : 20px;
+            margin-left: 15px;
+        }
+    }
+
 }
 
 .downloadable{
@@ -28,13 +53,13 @@
 }
 
 .arts-title{
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: bold;
     color: #3F005E;
 }
 
 .logos-title{
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: bold;
     color: #FFFFFF;
 }
@@ -238,7 +263,7 @@
     }
 
     .logos-title{
-        font-size: 22px;
+        font-size: 3rem;
     }
 
     .logos-span{

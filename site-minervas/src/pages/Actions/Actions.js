@@ -13,7 +13,7 @@ function Actions() {
       <Header />
         <div><ActionsContent /></div>
         <div><Materials /></div>
-        <div style={{ height: 200 }}></div>
+        <div class="end-page" style={{ height: 200 }}></div>
       <Footer />
     </div>
   )
